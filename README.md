@@ -11,7 +11,7 @@ The code has been tested with the following versions of packages.
 
 ## Running CCMI on your own data-sets 
 
-First cd to the folder contain CCMI code,
+First cd to the folder containing CCMI code,
 ```bash
 $ cd CIT
 $ python
@@ -39,7 +39,7 @@ and then can run CCMI as shown in the example below :
 
 ### CMI Estimation : Synthetic data generation
 
-./data/gen_cmi_data.py - Contains several categories of synthetic data generators that have ground truth CMI values known. The models have X and Y are 1-dimensional variables, which dimension of Z can scale. Model-I in the paper corresponds to 'Category F' and Model-II to 'Category G'. To generate data from any category with given dimension (say dz = 20) and number of samples (say N = 5000), run the following from the 'data' folder:
+./data/gen_cmi_data.py - Contains several categories of synthetic data generators that have ground truth CMI values known. The models have X and Y as 1-dimensional variables, which dimension of Z can scale. Model-I in the paper corresponds to 'Category F' and Model-II to 'Category G'. To generate data from a particular category (say catogeory F) with given dimension (say dz = 20) and number of samples (say N = 5000), run the following from inside 'data' folder:
 
 ```bash
 PYTHONPATH='..' python gen_cmi_data.py --cat F --num_th 5 --dz 20
@@ -59,31 +59,29 @@ $./gen_synthetic_data_bash.sh
 ### CMI Estimation : Running the Estimators
 
 To run Generator+Classifier estimators, first cd to CMI_Est and then run :
-```
-bash
+```bash
+cd CMI_Est
 python main_CMI_Est.py --mimic cgan --tester Classifier --metric donsker_varadhan --cat F --num_th 5 --dz 20
 ```
 
 Similarly for other Generators,
-```
-bash
+```bash
 python main_CMI_Est.py --mimic cvae --tester Classifier --metric donsker_varadhan --cat F --num_th 5 --dz 20
 python main_CMI_Est.py --mimic knn --tester Classifier --metric donsker_varadhan --cat F --num_th 5 --dz 20
 ```
 
 For difference-based CMI estimates, run the following (for Classifier-MI and f-MINE respectively) :
-```
-bash
+```bash
 python main_CMI_Est.py --mimic mi_diff --tester Classifier --metric donsker_varadhan --cat F --num_th 5 --dz 20
 python main_CMI_Est.py --mimic mi_diff --tester Neural --metric f_divergence --cat F --num_th 5 --dz 20
 ```
 
-For ease of use, we have provided bash scripts './CMI_Est/run_<estimator>_mimic.sh' which will run the corresponding estimator on all linear and non-linear CMI estimation experiments in the paper. So, alternatively, to obtain estimates from CGAN+Classifier, run the following 
+\For ease of use, we have provided bash scripts './CMI_Est/run_\<estimator\>_mimic.sh' which will run the corresponding estimator on all linear and non-linear CMI estimation experiments in the paper. So, alternatively, to obtain estimates from CGAN+Classifier, run the following 
 ```bash
 $ chmod +x run_cgan_mimic.sh
 $./run_cgan_mimic.sh
 ```
 Similary, run_cvae_mimic.sh, run_knn_mimic.sh, run_mi_diff_mimic.sh, run_mi_diff_mimic_neural.sh, run_ksg_baseline.sh .
 
-(Note : Make sure to run './data/ggen_synthetic_data_bash.sh' before the estimation scripts to ensure data-sets are first created.)
+(Note : Make sure to run './data/gen_synthetic_data_bash.sh' before the estimation scripts to ensure data-sets are first created.)
 
