@@ -15,7 +15,7 @@ First cd to the folder contain CCMI code,
 ```bash
 $ cd CIT
 $ python
-``
+```
 and then can run CCMI as shown in the example below :
 
 ```bash
