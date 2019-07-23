@@ -39,7 +39,7 @@ and then can run CCMI as shown in the example below (you could have this code sn
 
 ### CMI Estimation : Synthetic data generation
 
-./data/gen_cmi_data.py - Contains several categories of synthetic data generators that have ground truth CMI values known. The models have X and Y as 1-dimensional variables, which dimension of Z can scale. Model-I in the paper corresponds to 'Category F' and Model-II to 'Category G'. To generate data from a particular category (say category F) with given dimension (say dz = 20) and number of samples (say N = 5000), run the following from inside 'data' folder:
+./data/gen_cmi_data.py - Contains several categories of synthetic data generators that have ground truth CMI values known. The models have X and Y as 1-dimensional variables, while dimension of Z can scale. Model-I in the paper corresponds to 'Category F' and Model-II to 'Category G'. To generate data from a particular category (say category F) with given dimension (say dz = 20) and number of samples (say N = 5000), run the following from inside 'data' folder:
 
 ```bash
 $ PYTHONPATH='..' python gen_cmi_data.py --cat F --num_th 5 --dz 20
