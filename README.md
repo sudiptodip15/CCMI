@@ -16,7 +16,7 @@ First cd to the folder containing CCMI code,
 $ cd CIT
 $ python
 ```
-and then can run CCMI as shown in the example below :
+and then can run CCMI as shown in the example below (you could have this code snippet as a Python script) :
 
 ```bash
 >> from CCMI import CCMI
@@ -49,7 +49,6 @@ $ PYTHONPATH='..' python gen_cmi_data.py --cat F --num_th 5 --dz 20
 
 For ease of use, we have provided a bash script './data/gen_synthetic_data_bash.sh' which will generate all the data-sets used for linear and non-linear CMI estimation experiments in the paper. So, alternatively, to generate all data-sets used in the paper, 
 ```bash
-$ chmod +x gen_synthetic_data_bash.sh
 $ ./gen_synthetic_data_bash.sh
 ```
 
@@ -78,7 +77,6 @@ $ python main_CMI_Est.py --mimic mi_diff --tester Neural --metric f_divergence -
 
 For ease of use, we have provided bash scripts './CMI_Est/run_\<estimator\>_mimic.sh' which will run the corresponding estimator on all linear and non-linear CMI estimation experiments in the paper. For example, to obtain estimates from CGAN+Classifier, run the following 
 ```bash
-$ chmod +x run_cgan_mimic.sh
 $ ./run_cgan_mimic.sh
 ```
 Similary, run_cvae_mimic.sh, run_knn_mimic.sh, run_mi_diff_mimic.sh, run_mi_diff_mimic_neural.sh, run_ksg_baseline.sh .
@@ -107,19 +105,18 @@ $ python main_CCMI_postNonLin.py
 And for flow-cytometry real data-sets :
 
 ```bash
-$ cd CIT
 $ python main_CCMI_flowCyto.py
 ```
 
 For comparison with state-of-the-art CI-Tester (CCIT), we have also provided code to run it for synthetic and real data-sets.
 
 ```bash
-$python main_CCIT_postNonLin.py --dz 1
+$ python main_CCIT_postNonLin.py --dz 1
 ```
 Similarly, run for the other dimensions {5, 10, 20, 50, 100}.
 
 And for flow-cytometry real data-sets :
 ```bash
-$python main_CCIT_flowCyto.py
+$ python main_CCIT_flowCyto.py
 ```
 
