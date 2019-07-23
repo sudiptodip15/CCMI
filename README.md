@@ -45,9 +45,9 @@ and then can run CCMI as shown in the example below (you could have this code sn
 $ PYTHONPATH='..' python gen_cmi_data.py --cat F --num_th 5 --dz 20
 ```
 
-(Note: PYTHONPATH='..' is required because NPEET code is the parent folder, but gen_cmi_data.py is run from ./data/)
+(Note: PYTHONPATH='..' is required because NPEET code is in the parent folder, but gen_cmi_data.py is run from ./data/)
 
-For ease of use, we have provided a bash script './data/gen_synthetic_data_bash.sh' which will generate all the data-sets used for linear and non-linear CMI estimation experiments in the paper. So, alternatively, to generate all data-sets used in the paper, 
+For ease of use, we have provided a bash script './data/gen_synthetic_data_bash.sh' which will generate all the data-sets used for linear and non-linear CMI estimation experiments in the paper. So, alternatively, to generate all data-sets used in the paper, just run
 ```bash
 $ ./gen_synthetic_data_bash.sh
 ```
